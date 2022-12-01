@@ -1,0 +1,14 @@
+name: Actions workflow
+
+on: [push]
+
+jobs: 
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Simple Js Action
+      uses: actions/hello-world-js-action@v1
+      with: 
+        who-to-greet: Msawenkosi
+    - name: Log Greeting Time
+      run: echo "The time is $(date)."
