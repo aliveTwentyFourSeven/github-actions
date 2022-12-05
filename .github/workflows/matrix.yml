@@ -8,7 +8,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         node-version: [6,8,12]
       fail-fast: true
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Log node version
         run: node -v
