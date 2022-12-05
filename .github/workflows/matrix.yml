@@ -7,6 +7,16 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         node-version: [6,8,12]
+        include:
+          - os: ubuntu-latest
+            node-version: 3
+            env: {NODE_ENV: production}
+          
+        exclude:
+          - os: macos-latest
+            node-version: 6
+          - os: windows-latest
+            node-version: 8
       fail-fast: true
     runs-on: ${{ matrix.os }}
     steps:
